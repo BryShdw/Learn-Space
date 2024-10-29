@@ -31,17 +31,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-        // Funcionalidad de búsqueda (ejemplo básico)
-    const searchInputs = document.querySelectorAll('.search-input');
-    searchInputs.forEach(input => {
-        input.addEventListener('input', function() {
-            const searchTerm = this.value.toLowerCase();
-            const listItems = this.closest('.tab-content').querySelectorAll('.list-item');
-
-            listItems.forEach(item => {
-                const text = item.textContent.toLowerCase();
-                item.style.display = text.includes(searchTerm) ? '' : 'none';
-            });
-        });
-    });
 });
