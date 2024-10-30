@@ -9,35 +9,44 @@
 <body>
     <div class="container">
         <header>
-            <div class="logo-container">
-                <img class="logo" src="assets/img/Learn Space Logo 2.jpg" alt="Logo" width="60" height="60">
-                <span class="brand-name">Learn Space</span>
-            </div>
-            <div class="search-container">
-                <input type="search" class="search-input" placeholder="Buscar cursos...">
-                <span class="search-icon">🔍</span>
-            </div>
-            <div class="header-buttons">
-                <button class="btn">
-                    <img src="assets/img/Carrito de Compras.webp" alt="carrito" width="20" height="20">
-                </button>
-                <button class="btn">Planes</button>
-                <div class="profile-menu">
-                    <button class="btn" id="profileButton">
-                        <img src="Imagenes-Recurso/userimg.png" alt="usuario" width="40" height="40">
-                    </button>
-                    <div class="profile-dropdown" id="profileDropdown">
-                        <button>Ver Perfil</button>
-                        <button>Becas</button>
-                        <button>Contáctanos</button>
-                        <button>Cerrar Sesión</button>
+            <div class="header-container">
+                <div class="header-content">
+                    <div class="logo-container">
+                        <img class="logo" src="assets/img/Learn Space Logo 2.jpg" alt="Logo" width="60" height="60">
+                        <span class="brand-name">Learn Space</span>
                     </div>
+                    <div class="search-container">
+                        <input type="search" class="search-input" placeholder="Buscar cursos...">
+                        <span class="search-icon">
+                            <img src="assets/img/busqueda.webp" alt="">
+                        </span>
+                    </div>
+                    <div class="header-buttons">
+                        <button class="btn">
+                            <img src="assets/img/Carrito de Compras.webp" alt="carrito" width="20" height="20">
+                        </button>
+                        <button class="btn">Planes</button>
+                        <div class="profile-menu">
+                            <button class="btn" id="profileButton">
+                                <img src="Imagenes-Recurso/userimg.png" alt="usuario" width="40" height="40">
+                            </button>
+                            <div class="profile-dropdown" id="profileDropdown">
+                                <button>Ver Perfil</button>
+                                <button>Becas</button>
+                                <button>Contáctanos</button>
+                                <button>Cerrar Sesión</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="menu-button" id="menuButton">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                    </button>
                 </div>
             </div>
         </header>
 
         <div class="main-container">
-            <aside class="sidebar" id="sidebar">
+            <aside class="sidebar">
                 <nav>
                     <button class="nav-button active" data-tab="inicio"><img src="assets/img/Home.webp" alt="home">INICIO</button>
                     <button class="nav-button" data-tab="biblioteca"><img src="assets/img/Biblioteca.webp" alt="biblioteca">BIBLIOTECA</button>
@@ -51,155 +60,241 @@
                 <section id="inicio" class="tab-content active">
                     <section class="schools">
                         <h2>Explora nuestras Escuelas</h2>
-                        <div class="grid-school">
-                            <div class="card-school">
-                                <div class="card-school-image"></div>
-                                <div class="card-school-content">
-                                    <h4>Programación y Desarrollo</h4>
+                        <div class="carousel">
+                            <div class="carousel-content">
+                                <div class="card-school">
+                                    <div class="card-school-image"></div>
+                                    <div class="card-school-content">
+                                        <h4>Programación y Desarrollo</h4>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="card-school">
-                                <div class="card-school-image"></div>
-                                <div class="card-school-content">
-                                    <h4>Diseño y Arte Digital</h4>
+                                <div class="card-school">
+                                    <div class="card-school-image"></div>
+                                    <div class="card-school-content">
+                                        <h4>Diseño y Arte Digital</h4>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="card-school">
-                                <div class="card-school-image"></div>
-                                <div class="card-school-content">
-                                    <h4>Matemáticas</h4>
+                                <div class="card-school">
+                                    <div class="card-school-image"></div>
+                                    <div class="card-school-content">
+                                        <h4>Matemáticas</h4>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="card-school">
-                                <div class="card-school-image"></div>
-                                <div class="card-school-content">
-                                    <h4>Idiomas</h4>
+                                <div class="card-school">
+                                    <div class="card-school-image"></div>
+                                    <div class="card-school-content">
+                                        <h4>Idiomas</h4>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="card-school">
-                                <div class="card-school-image"></div>
-                                <div class="card-school-content">
-                                    <h4>Habilidades Sociales</h4>
+                                <div class="card-school">
+                                    <div class="card-school-image"></div>
+                                    <div class="card-school-content">
+                                        <h4>Habilidades Sociales</h4>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="card-school">
-                                <div class="card-school-image"></div>
-                                <div class="card-school-content">
-                                    <h4>Música</h4>
+                                <div class="card-school">
+                                    <div class="card-school-image"></div>
+                                    <div class="card-school-content">
+                                        <h4>Música</h4>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="card-school">
-                                <div class="card-school-image"></div>
-                                <div class="card-school-content">
-                                    <h4>Salud y Bienestar</h4>
+                                <div class="card-school">
+                                    <div class="card-school-image"></div>
+                                    <div class="card-school-content">
+                                        <h4>Salud y Bienestar</h4>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="card-school">
-                                <div class="card-school-image"></div>
-                                <div class="card-school-content">
-                                    <h4>Negocios y Emprendimiento</h4>
+                                <div class="card-school">
+                                    <div class="card-school-image"></div>
+                                    <div class="card-school-content">
+                                        <h4>Negocios y Emprendimiento</h4>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="card-school">
-                                <div class="card-school-image"></div>
-                                <div class="card-school-content">
-                                    <h4>Historia y Humanidades</h4>
+                                <div class="card-school">
+                                    <div class="card-school-image"></div>
+                                    <div class="card-school-content">
+                                        <h4>Historia y Humanidades</h4>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="card-school">
-                                <div class="card-school-image"></div>
-                                <div class="card-school-content">
-                                    <h4>Ciencia y Tecnología</h4>
+                                <div class="card-school">
+                                    <div class="card-school-image"></div>
+                                    <div class="card-school-content">
+                                        <h4>Ciencia y Tecnología</h4>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="card-school">
-                                <div class="card-school-image"></div>
-                                <div class="card-school-content">
-                                    <h4>Cocina y Gastronomía</h4>
+                                <div class="card-school">
+                                    <div class="card-school-image"></div>
+                                    <div class="card-school-content">
+                                        <h4>Cocina y Gastronomía</h4>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="card-school">
-                                <div class="card-school-image"></div>
-                                <div class="card-school-content">
-                                    <h4>Marketing Digital</h4>
+                                <div class="card-school">
+                                    <div class="card-school-image"></div>
+                                    <div class="card-school-content">
+                                        <h4>Marketing Digital</h4>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="card-school">
-                                <div class="card-school-image"></div>
-                                <div class="card-school-content">
-                                    <h4>Dibujo y Pintura</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="courses">
-                        <h2>Nuestros Mejores Cursos</h2>
-                        <div class="grid">
-                            <div class="card">
-                                <div class="card-image"></div>
-                                <div class="card-content">
-                                    <h3>JavaScript Avanzado</h3>
-                                    <p>4.5 ★★★★☆ (120 reseñas)</p>
-                                    <div class="card-edad">
-                                        <h4>Edad</h4>
-                                        <h4>10 - 17 años</h4>
+                                <div class="card-school">
+                                    <div class="card-school-image"></div>
+                                    <div class="card-school-content">
+                                        <h4>Dibujo y Pintura</h4>
                                     </div>
                                 </div>
                             </div>
-                            <div class="card">
-                                <div class="card-image"></div>
-                                <div class="card-content">
-                                    <h3>React para principiantes</h3>
-                                    <p>4.5 ★★★★☆ (120 reseñas)</p>
+                        </div>
+                    </section>
+
+                    <section class="courses" id="best-courses">
+                        <h2>Nuestros Mejores Cursos</h2>
+                        <div class="carousel">
+                            <div class="carousel-content">
+                                <div class="card">
+                                    <div class="card-image"></div>
+                                    <div class="card-content">
+                                        <h3>JavaScript Avanzado</h3>
+                                        <p>4.5 ★★★★☆</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-image"></div>
-                                <div class="card-content">
-                                    <h3>Diseño de interfaces modernas</h3>
-                                    <p>4.5 ★★★★☆ (120 reseñas)</p>
+                                <div class="card">
+                                    <div class="card-image"></div>
+                                    <div class="card-content">
+                                        <h3>React para principiantes</h3>
+                                        <p>4.5 ★★★★☆</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-image"></div>
-                                <div class="card-content">
-                                    <h3>SEO y posicionamiento web</h3>
-                                    <p>4.5 ★★★★☆ (120 reseñas)</p>
+                                <div class="card">
+                                    <div class="card-image"></div>
+                                    <div class="card-content">
+                                        <h3>Diseño de interfaces modernas</h3>
+                                        <p>4.5 ★★★★☆</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-image"></div>
+                                    <div class="card-content">
+                                        <h3>SEO y posicionamiento web</h3>
+                                        <p>4.5 ★★★★☆</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-image"></div>
+                                    <div class="card-content">
+                                        <h3>JavaScript Avanzado</h3>
+                                        <p>4.5 ★★★★☆</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-image"></div>
+                                    <div class="card-content">
+                                        <h3>JavaScript Avanzado</h3>
+                                        <p>4.5 ★★★★☆</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-image"></div>
+                                    <div class="card-content">
+                                        <h3>JavaScript Avanzado</h3>
+                                        <p>4.5 ★★★★☆</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-image"></div>
+                                    <div class="card-content">
+                                        <h3>JavaScript Avanzado</h3>
+                                        <p>4.5 ★★★★☆</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-image"></div>
+                                    <div class="card-content">
+                                        <h3>JavaScript Avanzado</h3>
+                                        <p>4.5 ★★★★☆</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-image"></div>
+                                    <div class="card-content">
+                                        <h3>JavaScript Avanzado</h3>
+                                        <p>4.5 ★★★★☆</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </section>
 
-                    <section class="final-courses">
+                    <section class="final-courses" id="final-courses">
                         <h2>Nuestros Ultimos Cursos</h2>
-                        <div class="grid">
-                            <div class="card">
-                                <div class="card-image"></div>
-                                <div class="card-content">
-                                    <h3>JavaScript Avanzado</h3>
-                                    <p>4.5 ★★★★☆ (120 reseñas)</p>
+                        <div class="carousel">
+                            <div class="carousel-content">
+                                <div class="card">
+                                    <div class="card-image"></div>
+                                    <div class="card-content">
+                                        <h3>JavaScript Avanzado</h3>
+                                        <p>4.5 ★★★★☆</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-image"></div>
-                                <div class="card-content">
-                                    <h3>React para principiantes</h3>
-                                    <p>4.5 ★★★★☆ (120 reseñas)</p>
+                                <div class="card">
+                                    <div class="card-image"></div>
+                                    <div class="card-content">
+                                        <h3>React para principiantes</h3>
+                                        <p>4.5 ★★★★☆</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-image"></div>
-                                <div class="card-content">
-                                    <h3>Diseño de interfaces modernas</h3>
-                                    <p>4.5 ★★★★☆ (120 reseñas)</p>
+                                <div class="card">
+                                    <div class="card-image"></div>
+                                    <div class="card-content">
+                                        <h3>Diseño de interfaces modernas</h3>
+                                        <p>4.5 ★★★★☆</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-image"></div>
-                                <div class="card-content">
-                                    <h3>SEO y posicionamiento web</h3>
-                                    <p>4.5 ★★★★☆ (120 reseñas)</p>
+                                <div class="card">
+                                    <div class="card-image"></div>
+                                    <div class="card-content">
+                                        <h3>SEO y posicionamiento web</h3>
+                                        <p>4.5 ★★★★☆</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-image"></div>
+                                    <div class="card-content">
+                                        <h3>JavaScript Avanzado</h3>
+                                        <p>4.5 ★★★★☆</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-image"></div>
+                                    <div class="card-content">
+                                        <h3>JavaScript Avanzado</h3>
+                                        <p>4.5 ★★★★☆</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-image"></div>
+                                    <div class="card-content">
+                                        <h3>JavaScript Avanzado</h3>
+                                        <p>4.5 ★★★★☆</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-image"></div>
+                                    <div class="card-content">
+                                        <h3>JavaScript Avanzado</h3>
+                                        <p>4.5 ★★★★☆</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-image"></div>
+                                    <div class="card-content">
+                                        <h3>JavaScript Avanzado</h3>
+                                        <p>4.5 ★★★★☆</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-image"></div>
+                                    <div class="card-content">
+                                        <h3>JavaScript Avanzado</h3>
+                                        <p>4.5 ★★★★☆</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -209,14 +304,13 @@
                 <section id="biblioteca" class="tab-content">
                     <h2>BIBLIOTECA</h2>
                     <h3>Aquí encontrarás todos tus cursos</h3>
-                    <div class="stats-grid">
+                    <div class="courses-biblioteca">
                         <div class="stat-card">
                             <h3>Python Básico</h3>
                             <p>Progreso</p>
                         </div>
-                    </div>
-                        
-                    </section>
+                    </div>  
+                </section>
 
                 <section id="rutas" class="tab-content">
                     <h2>MIS RUTAS</h2>

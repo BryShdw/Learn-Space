@@ -6,11 +6,11 @@ profileButton.addEventListener('click', () => {
     profileDropdown.style.display = profileDropdown.style.display === 'block' ? 'none' : 'block';
 });
 
+// Función para cambiar de pestaña
 const navButtons = document.querySelectorAll('.nav-button');
 const tabContents = document.querySelectorAll('.tab-content');
 const sectionTitle = document.getElementById('section-title');
 
-// Función para cambiar de pestaña
 function switchTab(tabId) {
     // Desactivar todos los botones y ocultar todos los contenidos
     navButtons.forEach(button => button.classList.remove('active'));
@@ -33,3 +33,6 @@ navButtons.forEach(button => {
         switchTab(this.dataset.tab);
     });
 });
+
+
+//Función cambiar de escuela
