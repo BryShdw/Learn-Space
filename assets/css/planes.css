@@ -181,95 +181,100 @@ header {
     flex: 1;
 }
 
-.cart-container {
-    display: flex;
-    gap: 2rem;
-    padding: 1rem;
-    background-color: var(--color-bg-secondary);
-    border-radius: 8px;
-    margin: 5%;
-}
-
-.cart-details {
-    width: 70%;
-    flex: 1;
-    background-color: var(--color-accent-light);
-    padding: 1rem;
-    border-radius: 8px;
-    margin: 2%;
-}
-.summary {
-    width: 30%;
-    flex: 1;
-    background-color: var(--color-accent-light);
-    padding: 1rem;
-    border-radius: 8px;
-    margin: 2%;
-}
-
-.cart-details h2,
-.summary h2 {
-    color: var(--color-secondary-dark);
-    font-size: 1.25rem;
+.plans-title {
+    text-align: center;
+    color: var(--color-primary);
+    font-size: 2rem;
     margin-bottom: 1rem;
 }
 
-.product-count {
-    color: var(--color-primary-dark);
-    font-size: 1rem;
-}
-
-.cart-item {
-    height: 30px;
-    background-color: var(--color-bg-main);
+/* Contenedor de planes */
+.plans-container {
     display: flex;
-    justify-content: space-between;
-    padding: 0.5rem 0;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    cursor: pointer;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap; /* Permitir que las tarjetas se ajusten en varias filas */
 }
 
-.item-name {
-    margin-top: 5px;
-    margin-left: 5%;
-    font-size: 1rem;
-    color: var(--color-secondary-darker);
+/* Tarjeta de plan */
+.plan-card {
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-accent-light);
+    border-radius: 8px;
+    padding: 1.5rem;
+    width: 300px; /* Ancho fijo para las tarjetas */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-.item-price {
-    margin-top: 5px;
-    margin-right: 5%;
+/* Tarjeta de plan destacada */
+.plan-card.highlighted {
+    border-color: var(--color-primary);
+}
+
+/* Títulos de tipo de plan */
+.plan-type {
+    font-size: 1.5rem;
     color: var(--color-primary);
-    font-weight: bold;
+    margin-bottom: 0.5rem;
 }
 
-.summary-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.5rem 0;
-}
-
-.summary-item span {
+/* Subtítulos de plan */
+.plan-subtitle {
     font-size: 1rem;
-    color: var(--color-secondary-darker);
+    color: var(--color-secondary-dark);
+    margin-bottom: 0.5rem;
 }
 
-.checkout-btn {
+/* Precio del plan */
+.plan-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+/* Periodo de cobro */
+.plan-period {
+    font-size: 0.9rem;
+    color: var(--color-secondary-dark);
+    margin-bottom: 1rem;
+}
+
+/* Beneficios */
+.plan-benefits {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.plan-benefits li {
+    margin-bottom: 0.5rem;
+    color: var(--color-text-dark);
+}
+
+/* Botón de suscripción */
+.plan-button {
     width: 100%;
     padding: 0.75rem;
-    margin-top: 1rem;
     background-color: var(--color-primary);
-    color: white;
+    color: #ffffff;
     border: none;
-    border-radius: 30px;
+    border-radius: 4px;
     cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
-.checkout-btn:hover {
+.plan-button:hover {
     background-color: var(--color-primary-dark);
 }
 
+/* Efecto hover en las tarjetas */
+.plan-card:hover {
+    transform: scale(1.05);
+}
 
 main {
     flex-grow: 1;
@@ -281,18 +286,5 @@ main {
 @media (max-width: 768px) {
     .main-container {
         flex-direction:  column;
-    }
-
-    .sidebar {
-        width: 100%;
-    }
-
-    .sidebar nav {
-        flex-direction: row;
-        overflow-x: auto;
-    }
-
-    .sidebar button {
-        white-space: nowrap;
     }
 }
