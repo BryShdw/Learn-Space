@@ -1,0 +1,353 @@
+:root {
+    /*Paleta Adulto
+    --color-bg-main: #f4f5fb;
+    --color-bg-secondary: #e8ebf6;
+    --color-accent-light: #ccd4eb;
+    --color-accent: #a0b1d9;
+    --color-primary-light: #6d89c3;
+    --color-primary: #4a69ad;
+    --color-primary-dark: #385191;
+    --color-secondary: #2f4275;
+    --color-secondary-dark: #2a3a62;
+    --color-secondary-darker: #273253;
+    --color-text-dark: #101422;
+    */
+
+    /*Paleta Adolescente
+    --color-bg-main: #f6f7f9;
+    --color-bg-secondary: #ebedf3;
+    --color-accent-light: #d3d7e4;
+    --color-accent: #acb5cd;
+    --color-primary-light: #acb5cd;
+    --color-primary: #607097;
+    --color-primary-dark: #4b597e;
+    --color-secondary: #3e4866;
+    --color-secondary-dark: #363e56;
+    --color-secondary-darker: #313649;
+    --color-text-dark: #272b3b;
+*/
+
+    /*Paleta Niños*/
+    --color-bg-main: #f0fafb;
+    --color-bg-secondary: #d8f0f5;
+    --color-accent-light: #a8dce7;
+    --color-accent: #84ccdc;
+    --color-primary-light: #4aadc6;
+    --color-primary: #2f90ab;
+    --color-primary-dark: #297691;
+    --color-secondary: #285f76;
+    --color-secondary-dark: #285062;
+    --color-secondary-darker: #254454;
+    --color-text-dark: #142b38;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--color-bg-main);
+    color: var(--color-text-dark);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    background-color: var(--color-secondary);
+    color: white;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.brand-name {
+    display: flex;
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.brand-name:hover {
+    background-color: #385191;
+}
+.search-container {
+    width: 40%;
+    flex-grow: 1;
+    position: relative;
+    margin: 0 1rem;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.5rem 0.5rem 0.5rem 2rem;
+    border-radius: 9999px;
+    border: 1px solid var(--color-primary);
+    background-color: var(--color-secondary-darker);
+    color: white;
+}
+
+.search-icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.search-icon img {
+    width: 20px;
+    height: 20px;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+.btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.profile-menu {
+    position: relative;
+}
+
+.profile-dropdown {
+    width: 150px;
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: var(--color-bg-secondary);
+    border-radius: 4px;
+}
+
+.profile-dropdown button {
+    display: block;
+    width: 100%;
+    height: 30px;
+    text-align: left;
+    padding: 0.5rem 1rem;
+    border: 0;
+}
+
+.profile-dropdown button:hover {
+    background-color: var(--color-accent-light);
+}
+
+.main-container {
+    background-color: var(--color-accent-light);
+    display: flex;
+    flex: 1;
+    margin: 20px 10%;
+    border-radius: 10px;
+    min-width: 80%;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    transition: 0.5s;
+    padding-top: 1rem;
+}
+
+.main-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    width: 90%;
+}
+
+.card-header {
+    background-color: var(--color-primary);
+    color: var(--color-bg-main);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 24px;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.user-info {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: var(--color-accent);
+    margin-right: 20px;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-details h2 {
+    color: var(--color-text-dark);
+    margin: 0 0 10px 0;
+}
+
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-edit {
+    background-color: var(--color-accent-light);
+    color: var(--color-secondary-dark);
+}
+
+.btn-edit:hover {
+    background-color: var(--color-accent);
+    color: var(--color-secondary-darker);
+}
+
+.btn i {
+    margin-right: 8px;
+}
+
+.courses-section h3 {
+    position: relative;
+    color: var(--color-secondary);
+    margin-bottom: 20px;
+    flex-grow: 1;
+    padding: 1rem;
+    left: 10%;
+}
+
+.courses-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    transition: 0.5s;
+    padding-top: 1rem;
+    max-width: 100%;
+    background-color: var(--color-accent-light);
+}
+
+.course-card {
+    background-color: var(--color-bg-main);
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+.course-info {
+    display: flex;
+    align-items: center;
+}
+
+.course-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: var(--color-accent-light);
+    margin-right: 16px;
+}
+
+.course-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.course-info h4 {
+    color: var(--color-secondary-dark);
+    margin: 0;
+}
+
+.btn-start {
+    background-color: var(--color-primary);
+    color: var(--color-bg-main);
+}
+
+.btn-start:hover {
+    background-color: var(--color-primary-dark);
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction:  column;
+    }
+
+    .user-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .avatar {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .course-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .btn-start {
+        margin-top: 10px;
+        align-self: flex-end;
+    }
+}

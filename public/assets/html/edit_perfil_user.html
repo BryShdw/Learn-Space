@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil de Usuario</title>
+    <link rel="stylesheet" href="../css/edit_perfil_user.css">
+</head>
+<body>
+    <div class="container">
+        <header id="header">
+            <div class="header-container">
+                <div class="header-content">
+                    <div class="logo-container">
+                        <img class="logo" src="../img/Learn Space Logo 2.jpg" alt="Logo" width="60" height="60">
+                        <a href="home.html" class="brand-name">Learn Space</a>
+                    </div>
+                    <div class="search-container">
+                        <input type="search" class="search-input" placeholder="Buscar cursos...">
+                        <span class="search-icon">
+                            <img src="../img/busqueda.webp" alt="">
+                        </span>
+                    </div>
+                    <div class="header-buttons">
+                        <button class="btn">
+                            <img src="../img/Carrito de Compras.webp" alt="carrito" width="20" height="20">
+                        </button>
+                        <button class="btn">Planes</button>
+                        <div class="profile-menu">
+                            <button class="btn" id="profileButton">
+                                <img src="../img/userimg.png" alt="usuario" width="40" height="40">
+                            </button>
+                            <div class="profile-dropdown" id="profileDropdown">
+                                <button>Ver Perfil</button>
+                                <button>Becas</button>
+                                <button>Contáctanos</button>
+                                <button>Cerrar Sesión</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="main-container">
+            <h1>Editar Perfil</h1>
+            <p class="description">Actualiza tu información personal y profesional</p>
+            <div class="profile-container">
+                <div class="profile-left">
+                    <div class="avatar-container">
+                        <img src="https://github.com/shadcn.png" alt="Foto de perfil" class="avatar" id="avatar-preview">
+                        <div class="avatar-upload">
+                            <input type="file" id="avatar-upload" accept="image/*" style="display: none;">
+                            <button type="button" onclick="document.getElementById('avatar-upload').click()">Cambiar foto</button>
+                        </div>
+                    </div>
+                    <div class="password-section">
+                        <h3>Cambiar Contraseña</h3>
+                        <input type="password" id="newPassword" placeholder="Nueva Contraseña">
+                        <input type="password" id="confirmPassword" placeholder="Confirmar Contraseña">
+                        <button id="savePassword">Guardar Contraseña</button>
+                    </div>
+                </div>
+                <div class="profile-right">
+                    <h3>Tus datos</h3>
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" value="Daniel" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Apellidos</label>
+                        <input type="text" id="last-name" value="Martinez Zegarra" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Nombre de Usuario</label>
+                        <input type="text" id="user-name" value="danielmartinez54" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" value="carlos@ejemplo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Teléfono</label>
+                        <input type="text" id="phone-number" value="987654321" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Sitio Web personal</label>
+                        <input type="text" id="site-web" value="www.danielmartinez.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="about">Sobre mí</label>
+                        <textarea id="about" name="about" required>Soy un desarrollador apasionado por crear soluciones innovadoras y eficientes. Me especializo en JavaScript, React, y Node.js, y siempre estoy buscando aprender nuevas tecnologías.</textarea>
+                    </div>
+                    <h3>Información adicional</h3>
+                    <select id="genero">
+                        <option value="">Género</option>
+                        <option value="femenino">Femenino</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                    <label for="fechaNacimiento">Fecha de Nacimiento</label>
+                            <input type="date" id="fechaNacimiento">
+                            <input type="text" id="nivelEducativo" placeholder="Nivel educativo">
+                            <select id="trabajando">
+                                <option value="">¿Estás trabajando?</option>
+                                <option value="si">Sí</option>
+                                <option value="no">No</option>
+                            </select>
+                    <button type="submit" id="submit-btn">Guardar Cambios</button>
+                    <button id="back-profile" onclick="openNewPage()">Volver al perfil</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/edit_perfil_user.js"></script>
+</body>
+</html>
