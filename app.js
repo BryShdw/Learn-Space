@@ -34,14 +34,6 @@ app.use(session({
 //8- Invocamos al modulo de conexión
 const connection = require('./database/db');
 
-// Sirve los archivos estáticos desde la carpeta "public"
-app.use(express.static(path.join(__dirname, 'public')));
-
-// Ruta principal que redirige al index.html
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/assets/html/index.html'));
-});
-
-app.listen(3000, (req,res) =>{
+app.listen(3000, (req, res) =>{
     console.log('SERVER RUNNING IN http://localhost:3000')
 })
