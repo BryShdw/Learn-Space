@@ -151,6 +151,10 @@ header {
     position: relative;
 }
 
+.user_name {
+    font-weight: 700;
+}
+
 .profile-dropdown {
     width: 150px;
     display: none;
