@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
-    <link rel="stylesheet" href="resources/assets/css/home.css">
+    <title>Home</title>
+    <link rel="stylesheet" href="resources/css/home.css">
 </head>
-<body>
+<body class="<%= ageGroup %>">
     <div class="container">
         <header id="header">
             <div class="header-container">
@@ -22,19 +22,23 @@
                         </span>
                     </div>
                     <div class="header-buttons">
-                        <button class="btn" onclick="window.open('carrito.html', '_blank');">
+                        <button class="btn" onclick="window.location.href='/carrito';">
                             <img src="resources/assets/img/Carrito de Compras.webp" alt="carrito" width="20" height="20">
                         </button>
-                        <button class="btn" onclick="window.open('planes.html', '_blank');">Planes</button>
+                        <button class="btn" onclick="window.location.href='/planes';">Planes</button>
                         <div class="profile-menu">
                             <button class="btn" id="profileButton">
-                                <p class="user_name">LOPEZ</p>
+                                <p class="user_name"><%= user.name %></p>
                             </button>
                             <div class="profile-dropdown" id="profileDropdown">
-                                <button onclick="window.open('user_perfil.html', '_blank');">Ver Perfil</button>
-                                <button onclick="window.open('becas.html', '_blank');">Becas</button>
+                                <button onclick="window.location.href='/editar-perfil';">Ver Perfil</button>
+                                <button onclick="window.location.href='/becas';">Becas</button>
                                 <button>Contáctanos</button>
-                                <button>Cerrar Sesión</button>
+                        
+                                <!-- Botón de Cerrar Sesión -->
+                                <form action="/logout" method="get" style="display:inline;">
+                                    <button type="submit">Cerrar Sesión</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -79,85 +83,18 @@
                         <h2>Explora nuestras Escuelas</h2>
                         <div class="carousel-school">
                             <div class="carousel-school-content">
-                                <div class="card-school">
-                                    <div class="card-school-image"></div>
-                                    <div class="card-school-content">
-                                        <h4>Programación y Desarrollo</h4>
+                                <% schools.forEach(school => { %>
+                                    <div class="card-school">
+                                        <div class="card-school-image">
+                                            <!-- Aquí puedes agregar la imagen de la escuela si está disponible en los datos -->
+                                        </div>
+                                        <div class="card-school-content">
+                                            <h4><%= school.name %></h4>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="card-school">
-                                    <div class="card-school-image"></div>
-                                    <div class="card-school-content">
-                                        <h4>Diseño y Arte Digital</h4>
-                                    </div>
-                                </div>
-                                <div class="card-school">
-                                    <div class="card-school-image"></div>
-                                    <div class="card-school-content">
-                                        <h4>Matemáticas</h4>
-                                    </div>
-                                </div>
-                                <div class="card-school">
-                                    <div class="card-school-image"></div>
-                                    <div class="card-school-content">
-                                        <h4>Idiomas</h4>
-                                    </div>
-                                </div>
-                                <div class="card-school">
-                                    <div class="card-school-image"></div>
-                                    <div class="card-school-content">
-                                        <h4>Habilidades Sociales</h4>
-                                    </div>
-                                </div>
-                                <div class="card-school">
-                                    <div class="card-school-image"></div>
-                                    <div class="card-school-content">
-                                        <h4>Música</h4>
-                                    </div>
-                                </div>
-                                <div class="card-school">
-                                    <div class="card-school-image"></div>
-                                    <div class="card-school-content">
-                                        <h4>Salud y Bienestar</h4>
-                                    </div>
-                                </div>
-                                <div class="card-school">
-                                    <div class="card-school-image"></div>
-                                    <div class="card-school-content">
-                                        <h4>Negocios y Emprendimiento</h4>
-                                    </div>
-                                </div>
-                                <div class="card-school">
-                                    <div class="card-school-image"></div>
-                                    <div class="card-school-content">
-                                        <h4>Historia y Humanidades</h4>
-                                    </div>
-                                </div>
-                                <div class="card-school">
-                                    <div class="card-school-image"></div>
-                                    <div class="card-school-content">
-                                        <h4>Ciencia y Tecnología</h4>
-                                    </div>
-                                </div>
-                                <div class="card-school">
-                                    <div class="card-school-image"></div>
-                                    <div class="card-school-content">
-                                        <h4>Cocina y Gastronomía</h4>
-                                    </div>
-                                </div>
-                                <div class="card-school">
-                                    <div class="card-school-image"></div>
-                                    <div class="card-school-content">
-                                        <h4>Marketing Digital</h4>
-                                    </div>
-                                </div>
-                                <div class="card-school">
-                                    <div class="card-school-image"></div>
-                                    <div class="card-school-content">
-                                        <h4>Dibujo y Pintura</h4>
-                                    </div>
-                                </div>
+                                <% }); %>
                             </div>
+                               
                         </div>
                     </section>
 
@@ -165,19 +102,21 @@
                         <h2>Nuestros Mejores Cursos</h2>
                         <div class="scroll-container">
                             <div class="course-container">
-                                <div class="course-card">
-                                    <div class="course-image">
-                                        <img src="resources/assets/img/Portada js.webp" alt="">
-                                        <div class="course-overlay">
-                                            <button class="overlay-button" onclick="window.open('curso.html', '_blank');">Ir al Curso</button>
-                                            <button class="overlay-button">Agregar al Carrito</button>
+                                <% courses.forEach(course => { %>
+                                    <div class="course-card">
+                                        <div class="course-image">
+                                            <img src="<%= course.cover_image_url %>" alt="<%= course.title %>">
+                                            <div class="course-overlay">
+                                                <button class="overlay-button" onclick="window.location.href='/curso/<%= course.id_course %>';">Ir al Curso</button>
+                                                <button class="overlay-button">+ Biblioteca</button>
+                                            </div>
+                                        </div>
+                                        <div class="course-info">
+                                            <div class="course-title"><%= course.title %></div>
+                                            <div class="course-duration">Edad: <%= course.age_group %></div>
                                         </div>
                                     </div>
-                                    <div class="course-info">
-                                        <div class="course-title">Node.js Fundamentals</div>
-                                        <div class="course-duration">Edad: 6 - 9</div>
-                                    </div>
-                                </div>
+                                <% }); %>
                             </div>
                         </div>
                     </section>
@@ -186,19 +125,21 @@
                         <h2>Nuestros Ultimos Cursos</h2>
                         <div class="scroll-container">
                             <div class="course-container">
-                                <div class="course-card">
-                                    <div class="course-image">
-                                        <img src="resources/assets/img/Portada js.webp" alt="">
-                                        <div class="course-overlay">
-                                            <button class="overlay-button" onclick="window.open('curso.html', '_blank');">Ir al Curso</button>
-                                            <button class="overlay-button">Agregar al Carrito</button>
+                                <% courses.forEach(course => { %>
+                                    <div class="course-card">
+                                        <div class="course-image">
+                                            <img src="<%= course.cover_image_url %>" alt="<%= course.title %>">
+                                            <div class="course-overlay">
+                                                <button class="overlay-button" onclick="window.location.href='/curso/<%= course.id_course %>';">Ir al Curso</button>
+                                                <button class="overlay-button">+ Biblioteca</button>
+                                            </div>
+                                        </div>
+                                        <div class="course-info">
+                                            <div class="course-title"><%= course.title %></div>
+                                            <div class="course-duration">Edad: <%= course.age_group %></div>
                                         </div>
                                     </div>
-                                    <div class="course-info">
-                                        <div class="course-title">Node.js Fundamentals</div>
-                                        <div class="course-duration">Edad: 6 - 9</div>
-                                    </div>
-                                </div>
+                                <% }); %>
                             </div>
                         </div>
                     </section>
@@ -216,15 +157,6 @@
                                 <div class="course-title">Node.js Fundamentals</div>
                             </div>
                         </div>
-                        <div class="my-course" onclick="window.open('curso.html', '_blank');">
-                            <div class="my-course-image">
-                                <img src="resources/assets/img/Portada js.webp" alt="">
-                            </div>
-                            <div class="my-course-info">
-                                <div class="course-title">Node.js Fundamentals</div>
-                            </div>
-                        </div>
-                        
                     </div>
                 </section>
 

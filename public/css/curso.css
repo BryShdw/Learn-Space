@@ -1,5 +1,5 @@
 :root {
-    /*Paleta Adulto
+    /* Default palette (Adult) */
     --color-bg-main: #f4f5fb;
     --color-bg-secondary: #e8ebf6;
     --color-accent-light: #ccd4eb;
@@ -11,9 +11,9 @@
     --color-secondary-dark: #2a3a62;
     --color-secondary-darker: #273253;
     --color-text-dark: #101422;
-    */
+}
 
-    /*Paleta Adolescente
+body.teens {
     --color-bg-main: #f6f7f9;
     --color-bg-secondary: #ebedf3;
     --color-accent-light: #d3d7e4;
@@ -25,9 +25,9 @@
     --color-secondary-dark: #363e56;
     --color-secondary-darker: #313649;
     --color-text-dark: #272b3b;
-*/
+}
 
-    /*Paleta Niños*/
+body.kids {
     --color-bg-main: #f0fafb;
     --color-bg-secondary: #d8f0f5;
     --color-accent-light: #a8dce7;
@@ -258,6 +258,13 @@ main {
     margin-top: 2rem;
 }
 
+a.module-link {
+    text-decoration: none; /* Elimina el subrayado por defecto */
+    color: inherit; /* Hereda el color del texto dentro del módulo */
+    display: block;
+}
+
+/* Estilo del módulo */
 .module {
     background-color: var(--color-bg-secondary);
     border-radius: 8px;
@@ -268,6 +275,7 @@ main {
     cursor: pointer;
 }
 
+/* Estilo del número del módulo */
 .module-number {
     background-color: var(--color-primary);
     color: white;
@@ -278,27 +286,26 @@ main {
     flex-shrink: 0;
 }
 
+/* Estilo del contenido del módulo */
 .module-content {
     flex-grow: 1;
 }
 
+/* Estilo del título del módulo */
 .module-title {
     color: var(--color-secondary-dark);
     margin-bottom: 0.5rem;
 }
 
+/* Estilo de la descripción del módulo */
 .module-description {
     margin-bottom: 1rem;
 }
 
-.module-image {
-    width: 200px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-left: 1rem;
+/* Agregar un hover sutil al enlace */
+a.module-link:hover {
+    opacity: 0.9; /* Añade un efecto sutil al pasar el ratón */
 }
-
 
 @media (max-width: 768px) {
 

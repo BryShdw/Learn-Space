@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Becas</title>
-    <link rel="stylesheet" href="resources/assets/css/becas.css">
+    <link rel="stylesheet" href="resources/css/becas.css">
 </head>
-<body>
+<body class="<%= ageGroup %>"">
     <div class="container">
         <header id="header">
             <div class="header-container">
                 <div class="header-content">
                     <div class="logo-container">
                         <img class="logo" src="resources/assets/img/Learn Space Logo 2.jpg" alt="Logo" width="60" height="60">
-                        <a href="home.html" class="brand-name">Learn Space</a>
+                        <a href="/home" class="brand-name">Learn Space</a>
                     </div>
                     <div class="search-container">
                         <input type="search" class="search-input" placeholder="Buscar cursos...">
@@ -22,17 +22,17 @@
                         </span>
                     </div>
                     <div class="header-buttons">
-                        <button class="btn">
+                        <button class="btn" onclick="window.location.href='/carrito';">
                             <img src="resources/assets/img/Carrito de Compras.webp" alt="carrito" width="20" height="20">
                         </button>
-                        <button class="btn">Planes</button>
+                        <button class="btn" onclick="window.location.href='/planes';">Planes</button>
                         <div class="profile-menu">
                             <button class="btn" id="profileButton">
-                                <p class="user_name">LOPEZ</p>
+                                <p class="user_name"><%= user.name %></p>
                             </button>
                             <div class="profile-dropdown" id="profileDropdown">
-                                <button>Ver Perfil</button>
-                                <button>Becas</button>
+                                <button onclick="window.location.href='/editar-perfil';">Ver Perfil</button>
+                                <button onclick="window.location.href='/becas';">Becas</button>
                                 <button>Contáctanos</button>
                                 <button>Cerrar Sesión</button>
                             </div>
