@@ -355,3 +355,48 @@ header {
         align-self: flex-end;
     }
 }
+.tab-container {
+    width: 100%; /* Ajusta el ancho para que abarque todo el espacio disponible */
+    border-radius: 5px; /* Redondeo de las esquinas */
+    overflow: hidden; /* Evita desbordes */
+}
+
+.tabs {
+    display: flex;
+    cursor: pointer;
+    background-color: var(--color-primary);
+
+}
+
+.tab {
+    flex: 1;
+    text-align: center;
+    padding: 15px; /* Más espacio para un diseño más limpio */
+    color: #fff; /* Letras blancas cuando no están seleccionadas */
+    background-color: var(--color-primary);
+    font-family: Arial, sans-serif;
+
+}
+
+.tab:last-child {
+    border-right: 10px; /* Elimina el borde derecho del último elemento */
+}
+
+.tab.active {
+    background-color: #fff; /* Fondo blanco para la pestaña activa */
+    color: #000; /* Letras negras para la pestaña activa */
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+
+}
+
+.content {
+    display: none;
+    padding: 20px;
+    background-color: #ffffff; /* Fondo suave para el contenido */
+    border-top: 0px solid #000; /* Borde superior en el contenido */
+}
+
+.content.active {
+    display: block;
+}
