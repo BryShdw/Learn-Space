@@ -1,194 +1,147 @@
-*{
+:root {
+    --color-bg-main: #f0fafb;
+    --color-bg-secondary: #d8f0f5;
+    --color-accent-light: #a8dce7;
+    --color-accent: #84ccdc;
+    --color-primary-light: #4aadc6;
+    --color-primary: #2f90ab;
+    --color-primary-dark: #297691;
+    --color-secondary: #285f76;
+    --color-secondary-dark: #285062;
+    --color-secondary-darker: #254454;
+    --color-text-dark: #142b38;
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-decoration: none;
-    font-family: 'Roboto', sans-serif;
 }
 
-body{
-    background-image: url(../img/fondo.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-}
-
-main{
-    width: 100%;
-    padding: 20px;
-    margin: auto;
-    margin-top: 100px;
-}
-
-.contenedor{
-    width: 100%;
-    max-width: 800px;
-    margin: auto;
-    margin-top: 100px;
-    position: relative;
-}
-
-.caja_trasera{
-    width: 100%;
-    padding: 10px 20px;
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--color-bg-main);
     display: flex;
     justify-content: center;
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    background-color: rgb(28, 19, 100,0.5);
-
-}
-
-.caja_trasera div{
-    margin: 100px 40px;
-    color: white;
-    transition: all 500ms;
-}
-
-
-.caja_trasera div p,
-.caja_trasera button{
-    margin-top: 30px;
-    border-radius: 5px;
-}
-
-.caja_trasera div h3{
-    font-weight: 400;
-    font-size: 26px;
-}
-
-.caja_trasera div p{
-    font-size: 16px;
-    font-weight: 300;
-}
-
-.caja_trasera button{
-    padding: 10px 40px;
-    border: 2px solid white;
-    font-size: 14px;
-    background: transparent;
-    font-weight: 600;
-    cursor: pointer;
-    color: white;
-    outline: none;
-    transition: all 300ms;
-}
-
-.caja_trasera button:hover{
-    background: white;
-    color: #1C1364;
-}
-
-/*Formularios*/
-
-.logo {
-    margin: auto;
-    display: block;
-}
-
-.contenedor_login_registro{
-    display: flex;
     align-items: center;
-    width: 100%;
-    max-width: 380px;
-    position: relative;
-    top: -185px;
-    left: 10px;
-
-    /*La transicion va despues del codigo JS*/
-    transition: left 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    min-height: 100vh;
 }
 
-.contenedor_login_registro form{
+.container {
     width: 100%;
-    padding: 80px 20px;
-    background: white;
-    position: absolute;
-    border-radius: 20px;
+    max-width: 400px;
+    padding: 20px;
 }
 
-.contenedor_login_registro form h2{
-    font-size: 30px;
+.login-form {
+    background-color: var(--color-bg-secondary);
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
     text-align: center;
     margin-bottom: 20px;
-    color: #1C1364;
 }
 
-.input{
+
+.logo-container img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+h2 {
+    color: var(--color-secondary-dark);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--color-secondary);
+}
+
+input {
     width: 100%;
-    margin-top: 20px;
     padding: 10px;
-    border: none;
+    border: 1px solid var(--color-accent-light);
     border-radius: 5px;
-    background: #F2F2F2;
     font-size: 16px;
+    color: var(--color-text-dark);
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
     outline: none;
+    border-color: var(--color-primary);
 }
 
-.label {
-    color: black;
-    margin-top: 5px;
+.password-input-group {
+    position: relative;
 }
 
-.submit-btn {
-    background: #1C1364;
-    margin-top: 20px;
-    color: white;
+.password-input-group input {
+    padding-right: 40px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
     border: none;
-    width: 100%;
-    padding: 10px;
-    border-radius: 4px;
+    color: var(--color-secondary);
     cursor: pointer;
     font-size: 16px;
+    transition: color 0.3s ease;
 }
 
-.contenedor_login_registro form input:focus {
-    box-shadow: 0px 0px 4px #79d1eb;
+.toggle-password:hover {
+    color: var(--color-primary);
 }
 
-.formulario_login{
-    align-items: center;
-    opacity: 1;
-    display: block;
+input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.formulario_registro{
-    align-items: center;
-    display: none;
+input[type="submit"]:hover {
+    background-color: var(--color-primary-dark);
 }
 
-
-
-@media screen and (max-width: 850px){
-
-    main{
-        margin-top: 50px;
-    }
-
-    .caja_trasera{
-        max-width: 350px;
-        height: 300px;
-        flex-direction: column;
-        margin: auto;
-    }
-
-    .caja_trasera div{
-        margin: 0px;
-        position: absolute;
-    }
-
-
-    /*Formularios*/
-
-    .contenedor_login_registro{
-        top: -10px;
-        left: -5px;
-        margin: auto;
-    }
-
-    .contenedor_login_registro form{
-        position: relative;
-    }
+.register-link {
+    margin-top: 20px;
+    text-align: center;
+    color: var(--color-secondary);
 }
+
+.register-link a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.register-link a:hover {
+    color: var(--color-primary-dark);
+}
+
+.password-visible {
+    background-color: var(--color-accent-light);
+}
+

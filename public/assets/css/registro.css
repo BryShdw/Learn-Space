@@ -1,0 +1,147 @@
+:root {
+    --color-bg-main: #f0fafb;
+    --color-bg-secondary: #d8f0f5;
+    --color-accent-light: #a8dce7;
+    --color-accent: #84ccdc;
+    --color-primary-light: #4aadc6;
+    --color-primary: #2f90ab;
+    --color-primary-dark: #297691;
+    --color-secondary: #285f76;
+    --color-secondary-dark: #285062;
+    --color-secondary-darker: #254454;
+    --color-text-dark: #142b38;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--color-bg-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.registration-form {
+    background-color: var(--color-bg-secondary);
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.logo-container img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+h2 {
+    color: var(--color-secondary-dark);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--color-secondary);
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--color-accent-light);
+    border-radius: 5px;
+    font-size: 16px;
+    color: var(--color-text-dark);
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.password-input-group {
+    position: relative;
+}
+
+.password-input-group input {
+    padding-right: 40px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--color-secondary);
+    cursor: pointer;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.toggle-password:hover {
+    color: var(--color-primary);
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.login-link {
+    margin-top: 20px;
+    text-align: center;
+    color: var(--color-secondary);
+}
+
+.login-link a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.login-link a:hover {
+    color: var(--color-primary-dark);
+}
+
+.password-visible {
+    background-color: var(--color-accent-light);
+}
+
