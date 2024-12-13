@@ -250,6 +250,8 @@ app.get('/modulo/:courseId/:moduleIndex', (req, res) => {
     });
 });
 
+
+
 app.get('/becas', (req, res) => {
     if (!req.session.user) {
         return res.redirect('/login');
