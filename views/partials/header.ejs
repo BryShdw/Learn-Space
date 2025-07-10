@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- The title will be passed from each specific EJS file -->
+    <title><%= typeof title !== 'undefined' ? title : 'Learn Space' %></title>
+    <!-- Link to a general stylesheet first, then page-specific ones if needed -->
+    <link rel="stylesheet" href="/resources/css/main.css"> <!-- Changed from index.css to a more general main.css -->
+    <% if (typeof pageStyles !== 'undefined' && pageStyles) { %>
+        <link rel="stylesheet" href="/resources/css/<%= pageStyles %>.css">
+    <% } %>
+    <!-- Add any other global head elements here, e.g., favicons, global scripts -->
+</head>
+<body>
+<header class="site-header"> <!-- Changed class for clarity -->
+    <div class="container header-container"> <!-- Added a container for better layout control -->
+        <a href="/" class="logo-link">
+            <img src="/resources/assets/img/Learn Space Logo.jpg" alt="Learn Space Logo" class="logo" />
+            <!-- Consider adding a text logo for SEO/accessibility or if image fails -->
+            <!-- <span class="logo-text">Learn Space</span> -->
+        </a>
+        <nav class="main-navigation" aria-label="Main navigation">
+            <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav-list">
+                <span class="sr-only">Menu</span>
+                <!-- Icon for menu toggle (e.g., hamburger icon) -->
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <ul class="main-nav-list" id="main-nav-list">
+                <li><a class="main-nav-link" href="/home">Inicio</a></li> <!-- Assuming /home is the main authenticated page -->
+                <li><a class="main-nav-link" href="/courses">Cursos</a></li> <!-- Will need a /courses route -->
+                <li><a class="main-nav-link" href="/planes">Planes</a></li>
+                <% if (typeof user !== 'undefined' && user) { %>
+                    <li class="dropdown">
+                        <a href="#" class="main-nav-link profile-link" aria-haspopup="true" aria-expanded="false">
+                            <img src="<%= user.profileImageUrl || '/resources/assets/img/userimg.png' %>" alt="Perfil de <%= user.name %>" class="profile-pic-nav">
+                            <%= user.name %> <span class="arrow-down">▼</span>
+                        </a>
+                        <ul class="dropdown-menu" aria-label="User menu">
+                            <li><a href="/editar-perfil">Mi Perfil</a></li>
+                            <li><a href="/my-courses">Mis Cursos</a></li> <!-- Will need a /my-courses route -->
+                            <% if (user.role === 'admin' || user.role === 'instructor') { %>
+                                <li><a href="/dashboard">Dashboard</a></li> <!-- For admin/instructor -->
+                            <% } %>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a href="/logout">Cerrar Sesión</a></li>
+                        </ul>
+                    </li>
+                <% } else { %>
+                    <li><a class="main-nav-link" href="/login">Login</a></li>
+                    <li><a class="main-nav-link nav-cta" href="/register">Únete</a></li>
+                <% } %>
+            </ul>
+        </nav>
+    </div>
+</header>
+<main class="site-main"> <!-- Added class for main content area -->
+    <!-- Page specific content will go here -->

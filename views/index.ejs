@@ -1,112 +1,126 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn Space</title>
-    <link rel="stylesheet" href="resources/css/index.css"/>
-</head>
-<body>
-<header class="header">
-    <img src="resources/assets/img/logo.jpg" alt="logo" class="logo" />
-    <nav class="main-nav">
-        <ul class ="main-nav-list">
-            <li><a class="main-nav-link" href="cursos.html">Cursos</a></li>
-            <li><a class="main-nav-link" href="#">Planes</a></li>
-            <li><a class="main-nav-link nav-cta" href="/login">Únete!</a></li>
-        </ul>
-    </nav>
-</header>
-<main>
-    <section class ="section-hero">
-        <div class ="hero-text-box">
-            <h1 class ="heading-primary">
-                ¿Que esperas? Ven  y unete a nosotros!
-            </h1>
-            <p class="hero-description">
-                Desbloquea tu creatividad y construye el futuro:
-                 con cada línea de código, transformas tus ideas en realidad.
-                  ¡Atrévete a aprender, explora la tecnología y da el primer paso
-                   hacia un mundo lleno de posibilidades!
-            </p>
-            <a href="#" class ="btn--full margin-right-sm">Vive la experiencia</a>
-            <a href="#" class="btn--outline"> Descubre más &darr;</a>
-<div class = "delivered-meals">
-    <div class="delivered-imgs">
-        <img
-        src="resources/assets/img/imagen2.jpeg"
-        alt="Customer photo"/>
-      </div>
-      <p class ="delivered-text">
-    <span>100+</span> Cursos disponibles!
-       </p>
-       </div>
-        </div>
+<%- include('../partials/header', {
+    title: 'Bienvenido a Learn Space - Tu Plataforma de Aprendizaje',
+    pageStyles: 'index-specific' /* Optional: if you have index.css for this page */
+}) %>
 
-        <div class = "hero-img-box">
-            <img src ="resources/assets/img/imagen3.jpeg" alt ="people eating" class="hero-img"/>
+<section class="hero-section">
+    <div class="container hero-content">
+        <div class="hero-text-box">
+            <h1 class="heading-primary">Transforma tu Futuro con Learn Space</h1>
+            <p class="hero-description">
+                Desbloquea tu creatividad y construye el mañana. Con cada línea de código, cada diseño y cada nueva habilidad,
+                transformas tus ideas en realidad. ¡Atrévete a aprender, explora la tecnología y da el primer paso
+                hacia un mundo lleno de posibilidades!
+            </p>
+            <div class="hero-actions">
+                <a href="/courses" class="btn btn--primary btn--large">Explorar Cursos</a>
+                <a href="/register" class="btn btn--outline btn--large">Únete Gratis</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <img src="/resources/assets/img/imgcards.png" alt="Cursos disponibles" class="stat-icon"/>
+                    <p><span>+100</span> Cursos Disponibles</p>
+                </div>
+                <div class="stat-item">
+                    <img src="/resources/assets/img/userimg.png" alt="Estudiantes felices" class="stat-icon"/>
+                    <p><span>+5,000</span> Estudiantes Felices</p>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image-box">
+            <img src="/resources/assets/img/fondo.jpg" alt="Estudiantes aprendiendo en línea" class="hero-img"/>
         </div>
     </div>
-    </section>
+</section>
 
-</main>
-<footer class="footer">
-    <div class="footer-container">
-        <div class="footer-section">
-            <h4>Información General</h4>
-            <ul>
-                <li><a href="#">Libro de reclamaciones</a></li>
-                <li><a href="#">Facturación electrónica</a></li>
-                <li><a href="#">Certificados y Constancias</a></li>
-            </ul>
+<section class="featured-courses-section">
+    <div class="container">
+        <h2 class="section-title">Cursos Destacados</h2>
+        <div class="courses-grid">
+            <!-- Example Course Card (Repeat for more courses, ideally populated dynamically) -->
+            <div class="course-card">
+                <a href="/curso/1"> <%# Link to a specific course %>
+                    <img src="/resources/assets/img/Portada js.webp" alt="Curso de Web Development" class="course-thumbnail">
+                    <div class="course-card-content">
+                        <h3 class="course-title">Introducción al Desarrollo Web</h3>
+                        <p class="course-instructor">Por: Instructor Smith</p>
+                        <div class="course-meta">
+                            <span class="course-level">Principiante</span>
+                            <span class="course-duration">10 Horas</span>
+                        </div>
+                        <p class="course-excerpt">Aprende los fundamentos de HTML, CSS y JavaScript para construir tus primeras páginas web...</p>
+                    </div>
+                    <div class="course-card-footer">
+                        <span class="course-price">Gratis</span> <%# Or price %>
+                        <span class="btn btn--primary btn--small">Ver Curso</span>
+                    </div>
+                </a>
+            </div>
+            <!-- Add more course cards here -->
+             <div class="course-card">
+                <a href="/curso/2"> <%# Link to a specific course %>
+                    <img src="/resources/assets/img/imagen2.jpeg" alt="Curso de JavaScript Avanzado" class="course-thumbnail">
+                    <div class="course-card-content">
+                        <h3 class="course-title">JavaScript Avanzado</h3>
+                        <p class="course-instructor">Por: Instructor Smith</p>
+                        <div class="course-meta">
+                            <span class="course-level">Avanzado</span>
+                            <span class="course-duration">25 Horas</span>
+                        </div>
+                        <p class="course-excerpt">Domina conceptos avanzados de JavaScript, patrones de diseño y frameworks modernos...</p>
+                    </div>
+                     <div class="course-card-footer">
+                        <span class="course-price">$49.99</span>
+                        <span class="btn btn--primary btn--small">Ver Curso</span>
+                    </div>
+                </a>
+            </div>
+             <div class="course-card">
+                <a href="/curso/3"> <%# Link to a specific course %>
+                    <img src="/resources/assets/img/imagen3.jpeg" alt="Curso de UI/UX" class="course-thumbnail">
+                    <div class="course-card-content">
+                        <h3 class="course-title">Fundamentos de UI/UX</h3>
+                        <p class="course-instructor">Por: Instructor Smith</p>
+                        <div class="course-meta">
+                            <span class="course-level">Intermedio</span>
+                            <span class="course-duration">15 Horas</span>
+                        </div>
+                        <p class="course-excerpt">Descubre los principios del diseño de interfaces y experiencia de usuario efectivas...</p>
+                    </div>
+                     <div class="course-card-footer">
+                        <span class="course-price">$29.99</span>
+                        <span class="btn btn--primary btn--small">Ver Curso</span>
+                    </div>
+                </a>
+            </div>
         </div>
-        
-        <div class="footer-section">
-            <h4>Contacto</h4>
-            <p>Puedes contactarnos al:</p>
-            <p>(01) ***-***</p>
-            <p>A través de WhatsApp al:</p>
-            <p>(51) 969393883</p>
+        <div class="text-center" style="margin-top: 3rem;">
+            <a href="/courses" class="btn btn--secondary">Ver Todos los Cursos</a>
         </div>
-        
-        <div class="footer-section">
-            <h4>Horario de atención</h4>
-            <p>Atención al estudiante:</p>
-            <ul>
-                <li>Lunes a sábado</li>
-                <li>7:00 a. m. a 9:00 p. m.</li>
-            </ul>
-            <p>Informes e inscripciones:</p>
-            <ul>
-                <li>Lunes a sábado</li>
-                <li>8:00 a. m. a 7:00 p. m.</li>
-            </ul>
-        </div>
+    </div>
+</section>
 
-        <div class="footer-section">
-            <h4>Síguenos</h4>
-            <div class="social-icons">
-                <a href="#"><i class="social-icon" aria-label="WhatsApp">
-                    <img src="resources/assets/img/Whatsapp.png" alt="WhatsApp">
-                    <a href="#"><i class="social-icon" aria-label="Facebook">
-                        <img src="resources/assets/img/Facebook.png" alt="Facebook">
-                        <a href="#"><i class="social-icon" aria-label="Instagram">
-                            <img src="resources/assets/img/Instagram.png" alt="Instagram">
-                            <a href="#"><i class="social-icon" aria-label="Gmail">
-                                <img src="resources/assets/img/Gmail.png" alt="Gmail">
-                
-
+<section class="why-choose-us-section">
+    <div class="container">
+        <h2 class="section-title">¿Por Qué Elegir Learn Space?</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <img src="/resources/assets/img/Rutas.webp" alt="Rutas de aprendizaje" class="feature-icon">
+                <h3>Rutas de Aprendizaje Claras</h3>
+                <p>Desde principiante hasta experto, sigue caminos estructurados para alcanzar tus metas.</p>
+            </div>
+            <div class="feature-item">
+                <img src="/resources/assets/img/Progreso.webp" alt="Progreso" class="feature-icon">
+                <h3>Instructores Expertos</h3>
+                <p>Aprende de profesionales de la industria con experiencia real.</p>
+            </div>
+            <div class="feature-item">
+                <img src="/resources/assets/img/Biblioteca.webp" alt="Biblioteca" class="feature-icon">
+                <h3>Comunidad Activa</h3>
+                <p>Conéctate, colabora y crece con otros estudiantes y mentores.</p>
             </div>
         </div>
     </div>
+</section>
 
-    <div class="footer-bottom">
-        <p>
-            <a href="#">Preguntas frecuentes</a> | <a href="#">Términos y condiciones</a> | <a href="#">Políticas de privacidad</a>
-        </p>
-        <p>©2024 Todos los derechos reservados - Learn Space</p>
-    </div>
-</footer>
-</body>
-
-</html>
+<%- include('../partials/footer', { pageScripts: 'index-specific-js' }) %> <!-- Optional: if you have index.js for this page -->

@@ -1,0 +1,479 @@
+/* ------------------- */
+/* RESET STYLES        */
+/* ------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif; /* Using Inter as a modern sans-serif font, add @import in HTML or here */
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa; /* Light grey background */
+  font-size: 1.6rem; /* Default font size */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+  border: none; /* Remove default borders */
+}
+
+button {
+  cursor: pointer;
+  background: none; /* Remove default background */
+  color: inherit;
+}
+
+/* For accessibility: Hide elements visually but keep them accessible to screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ------------------- */
+/* UTILITY CLASSES     */
+/* ------------------- */
+.container {
+  width: 90%;
+  max-width: 1200px; /* Max width for larger screens */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* ------------------- */
+/* TYPOGRAPHY          */
+/* ------------------- */
+h1, h2, h3, h4 {
+  line-height: 1.2;
+  color: #212529; /* Darker color for headings */
+  margin-bottom: 1rem;
+}
+
+h1 { font-size: 3.2rem; } /* Approx 32px */
+h2 { font-size: 2.8rem; } /* Approx 28px */
+h3 { font-size: 2.4rem; } /* Approx 24px */
+h4 { font-size: 2rem; }   /* Approx 20px */
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+/* ------------------- */
+/* BUTTONS             */
+/* ------------------- */
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.btn--primary {
+  background-color: #007bff; /* Primary blue */
+  color: #fff;
+}
+.btn--primary:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.btn--secondary {
+  background-color: #6c757d; /* Secondary grey */
+  color: #fff;
+}
+.btn--secondary:hover {
+  background-color: #545b62;
+  transform: translateY(-2px);
+}
+
+.btn--outline {
+  background-color: transparent;
+  color: #007bff;
+  border: 1px solid #007bff;
+}
+.btn--outline:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* ------------------- */
+/* HEADER STYLES       */
+/* ------------------- */
+.site-header {
+  background-color: #fff;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #e9ecef; /* Light border */
+  position: sticky; /* Sticky header */
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-link .logo {
+  height: 50px; /* Adjust as needed */
+  width: auto;
+}
+
+.main-navigation .main-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem; /* Space between nav items */
+}
+
+.main-nav-link {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #343a40;
+  transition: color 0.3s ease;
+  padding: 0.5rem 0; /* For larger click area */
+  position: relative;
+}
+
+.main-nav-link:hover,
+.main-nav-link.active { /* For active page indication */
+  color: #007bff;
+}
+
+.main-nav-link::after { /* Underline effect on hover/active */
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #007bff;
+    transition: width 0.3s ease-in-out;
+}
+
+.main-nav-link:hover::after,
+.main-nav-link.active::after {
+    width: 100%;
+}
+
+
+.nav-cta {
+  background-color: #007bff;
+  color: #fff !important; /* Important to override default link color */
+  padding: 0.8rem 1.8rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+.nav-cta:hover {
+  background-color: #0056b3;
+  color: #fff !important;
+}
+.nav-cta::after { /* Remove underline effect for CTA button */
+    display: none;
+}
+
+
+/* Profile picture in nav */
+.profile-pic-nav {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 8px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%; /* Position below the parent */
+    right: 0; /* Align to the right */
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    min-width: 200px; /* Minimum width */
+    z-index: 1001; /* Above other header content */
+    padding: 0.5rem 0;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown .profile-link:focus + .dropdown-menu, /* For accessibility with keyboard */
+.dropdown .dropdown-menu:hover { /* Keep open when hovering menu */
+    display: block;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.5rem;
+    color: #343a40;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f8f9fa; /* Light hover effect */
+    color: #007bff;
+}
+
+.dropdown-divider {
+    height: 1px;
+    margin: 0.5rem 0;
+    overflow: hidden;
+    background-color: #e9ecef;
+    border: 0;
+}
+
+.arrow-down {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+}
+
+
+/* Mobile Navigation Toggle */
+.nav-toggle {
+  display: none; /* Hidden by default, shown on mobile */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.nav-toggle .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: #333;
+  border-radius: 1px;
+}
+.nav-toggle .icon-bar + .icon-bar {
+  margin-top: 4px;
+}
+
+
+/* ------------------- */
+/* MAIN CONTENT AREA   */
+/* ------------------- */
+.site-main {
+  flex-grow: 1; /* Ensures main content takes up available space, pushing footer down */
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* ------------------- */
+/* FOOTER STYLES       */
+/* ------------------- */
+.site-footer-main {
+  background-color: #343a40; /* Dark background for footer */
+  color: #adb5bd; /* Lighter text color for footer */
+  padding: 4rem 0 2rem 0;
+  font-size: 1.4rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Responsive grid */
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-section h4 {
+  color: #fff; /* White headings in footer */
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-section a {
+  color: #adb5bd;
+  transition: color 0.3s ease;
+}
+.footer-section a:hover {
+  color: #fff;
+}
+
+.footer-logo {
+    max-width: 150px;
+    margin-top: 1rem;
+    opacity: 0.8;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+.social-icons img {
+  width: 24px; /* Adjust as needed */
+  height: 24px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+.social-icons a:hover img {
+  opacity: 1;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid #495057; /* Separator line */
+  font-size: 1.3rem;
+}
+.footer-bottom p {
+  margin-bottom: 0.5rem;
+}
+
+
+/* ------------------- */
+/* RESPONSIVE STYLES   */
+/* ------------------- */
+@media (max-width: 768px) { /* Tablet and mobile */
+  html {
+    font-size: 56.25%; /* Adjust base font size for smaller screens ~9px */
+  }
+
+  .header-container {
+    position: relative; /* For positioning the mobile menu */
+  }
+
+  .nav-toggle {
+    display: block; /* Show hamburger menu */
+    z-index: 1002; /* Above nav list */
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .main-navigation .main-nav-list {
+    display: none; /* Hide nav list by default */
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Position below the header */
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+    border-top: 1px solid #e9ecef;
+    z-index: 1000;
+  }
+
+  .main-navigation .main-nav-list.nav-active {
+    display: flex; /* Show when active */
+  }
+
+  .main-nav-list li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .main-nav-link {
+    display: block;
+    padding: 1.2rem 1.5rem;
+    width: 100%;
+  }
+  .main-nav-link::after { /* Remove underline for mobile nav items or adjust */
+    display: none;
+  }
+  .main-nav-link.nav-cta {
+      margin: 1rem 1.5rem; /* Add some margin for the CTA button */
+  }
+
+  .dropdown .profile-link { /* Ensure profile link is block for dropdown to work better on mobile */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  .dropdown-menu { /* Full width dropdown on mobile */
+      position: static; /* No longer absolute */
+      width: 100%;
+      box-shadow: none;
+      border: none;
+      border-top: 1px solid #e9ecef;
+      display: none; /* Controlled by JS or :hover/:focus */
+  }
+  .dropdown:hover .dropdown-menu, /* For click/tap, JS will handle adding a class */
+  .dropdown .profile-link:focus + .dropdown-menu,
+  .dropdown .profile-link.open + .dropdown-menu { /* Class added by JS */
+      display: block;
+  }
+
+
+  .footer-grid {
+    grid-template-columns: 1fr; /* Stack footer sections */
+    text-align: center;
+  }
+  .footer-section .social-icons {
+    justify-content: center;
+  }
+  .footer-section.about-us .footer-logo {
+      margin-left: auto;
+      margin-right: auto;
+  }
+}
+
+@media (max-width: 480px) { /* Smaller mobile devices */
+  h1 { font-size: 2.8rem; }
+  h2 { font-size: 2.4rem; }
+
+  .site-header {
+      padding: 1rem 0;
+  }
+  .logo-link .logo {
+      height: 40px;
+  }
+}
+
+/* Add Google Font (Inter) if not already loaded via <link> in HTML head */
+/* This is better placed in the <head> of your HTML/EJS for performance */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'); */
+
+/* Example of how to use page-specific CSS (if you had a views/login.ejs needing login.css) */
+/* In login.ejs: <%- include('../partials/header', { title: 'Login', pageStyles: 'login' }) %> */
+/* Then you would have public/css/login.css with styles specific to the login page. */

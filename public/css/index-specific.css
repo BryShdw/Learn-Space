@@ -1,0 +1,274 @@
+/* Styles specific to index.ejs (Landing Page) */
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* Gradient background */
+    color: #fff;
+    padding: 6rem 0;
+    text-align: center;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+    text-align: left;
+}
+
+@media (min-width: 768px) {
+    .hero-content {
+        grid-template-columns: repeat(2, 1fr);
+        text-align: left;
+    }
+    .hero-text-box {
+        padding-right: 2rem;
+    }
+}
+
+.hero-text-box .heading-primary {
+    font-size: 4.2rem; /* Larger for hero */
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+.hero-description {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+}
+
+.hero-actions .btn {
+    margin: 0.5rem;
+}
+
+.btn--large {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.8rem;
+}
+.btn--primary.hero-actions{
+    background-color: #fff;
+    color: #007bff;
+}
+.btn--primary.hero-actions:hover{
+    background-color: #eef;
+}
+.btn--outline.hero-actions{
+    border-color: #fff;
+    color: #fff;
+}
+.btn--outline.hero-actions:hover{
+    background-color: #fff;
+    color: #007bff;
+}
+
+
+.hero-stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 3rem;
+    justify-content: flex-start; /* Align to start on larger screens */
+}
+
+.hero-stats .stat-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+}
+
+.hero-stats .stat-icon {
+    width: 30px; /* Adjust as needed */
+    height: 30px;
+}
+
+.hero-stats .stat-item p {
+    margin-bottom: 0;
+    font-size: 1.5rem;
+}
+.hero-stats .stat-item span {
+    font-weight: 700;
+}
+
+
+.hero-image-box .hero-img {
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 767px) {
+    .hero-section {
+        padding: 4rem 0;
+        text-align: center;
+    }
+    .hero-text-box .heading-primary {
+        font-size: 3.2rem;
+    }
+    .hero-stats {
+        flex-direction: column;
+        align-items: center; /* Center stats on mobile */
+    }
+     .hero-stats .stat-item {
+        width: 100%;
+        justify-content: center;
+    }
+    .hero-image-box {
+        order: -1; /* Image first on mobile */
+    }
+}
+
+
+/* Featured Courses Section */
+.featured-courses-section {
+    padding: 5rem 0;
+    background-color: #fff; /* White background for this section */
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 4rem;
+    color: #333;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.course-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column; /* Ensure footer is at bottom */
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.course-card a { /* Make the whole card clickable */
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Make link take full height of card */
+}
+
+.course-thumbnail {
+    width: 100%;
+    height: 200px; /* Fixed height for thumbnails */
+    object-fit: cover; /* Crop image to fit */
+}
+
+.course-card-content {
+    padding: 2rem;
+    flex-grow: 1; /* Allow content to grow and push footer down */
+}
+
+.course-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #212529;
+    margin-bottom: 0.5rem;
+}
+
+.course-instructor {
+    font-size: 1.4rem;
+    color: #6c757d;
+    margin-bottom: 1rem;
+}
+
+.course-meta {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1.3rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+.course-meta span {
+    background-color: #e9ecef;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+}
+
+.course-excerpt {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: #495057;
+    margin-bottom: 0; /* Remove default p margin if it's the last item before footer */
+}
+
+.course-card-footer {
+    padding: 1.5rem 2rem;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto; /* Push footer to bottom */
+}
+
+.course-price {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #007bff;
+}
+.course-price.free { /* If you add a class for free courses */
+    color: #28a745; /* Green for free */
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Why Choose Us Section */
+.why-choose-us-section {
+    padding: 5rem 0;
+    background-color: #f8f9fa; /* Light background */
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+    text-align: center;
+}
+
+.feature-item {
+    padding: 2.5rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.feature-icon {
+    width: 60px; /* Adjust as needed */
+    height: 60px;
+    margin-bottom: 1.5rem;
+    object-fit: contain; /* Use contain if icons are not square */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.feature-item h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.feature-item p {
+    font-size: 1.5rem;
+    color: #555;
+    line-height: 1.6;
+}

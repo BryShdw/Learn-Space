@@ -1,0 +1,56 @@
+</main> <!-- Closes site-main from header.ejs -->
+<footer class="site-footer-main"> <!-- Changed class name for clarity -->
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-section about-us">
+                <h4>Learn Space</h4>
+                <p>Desbloquea tu creatividad y construye el futuro. Con cada línea de código, transformas tus ideas en realidad.</p>
+                <a href="/"><img src="/resources/assets/img/Learn Space Logo 2.jpg" alt="Learn Space Logo" class="footer-logo"></a>
+            </div>
+
+            <div class="footer-section links">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="/courses">Todos los Cursos</a></li>
+                    <li><a href="/planes">Nuestros Planes</a></li>
+                    <li><a href="/becas">Becas y Ayudas</a></li>
+                    <li><a href="#">Blog</a></li> <!-- Add if you plan a blog -->
+                </ul>
+            </div>
+
+            <div class="footer-section contact">
+                <h4>Contacto</h4>
+                <p><a href="mailto:info@learnspace.com">info@learnspace.com</a></p>
+                <p>WhatsApp: <a href="https://wa.me/51969393883" target="_blank" rel="noopener noreferrer">(+51) 969-393-883</a></p>
+                <div class="social-icons">
+                    <a href="#" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><img src="/resources/assets/img/Whatsapp.png" alt="WhatsApp"></a>
+                    <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><img src="/resources/assets/img/Facebook.png" alt="Facebook"></a>
+                    <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><img src="/resources/assets/img/Instagram.png" alt="Instagram"></a>
+                    <a href="#" aria-label="Gmail" target="_blank" rel="noopener noreferrer"><img src="/resources/assets/img/Gmail.png" alt="Gmail"></a>
+                </div>
+            </div>
+
+            <div class="footer-section legal">
+                <h4>Información Legal</h4>
+                <ul>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Política de Cookies</a></li>
+                    <li><a href="#">Preguntas Frecuentes (FAQ)</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <%= new Date().getFullYear() %> Learn Space. Todos los derechos reservados.</p>
+            <p>Una plataforma educativa para el futuro.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Add global scripts here if any, like for mobile navigation toggle -->
+<script src="/resources/js/main.js"></script>
+<% if (typeof pageScripts !== 'undefined' && pageScripts) { %>
+    <script src="/resources/js/<%= pageScripts %>.js"></script>
+<% } %>
+</body>
+</html>
